@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi Luwak - Kelas Roasting</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      /* Style untuk select-box agar panahnya terlihat */
+      .form-input.bg-\[image\:--select-button-svg\] {
+        --select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(137,116,97)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden"
+      style='font-family: Epilogue, "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f2f0] px-10 py-3">
+          <a href="index.html" class="flex items-center gap-4 text-[#181411]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-[#181411] text-lg font-bold leading-tight tracking-[-0.015em]">Kopi Luwak</h2>
+          </a>
+        
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#181411] text-sm font-medium leading-normal" href="index.html">Beranda</a>
+              <a class="text-[#181411] text-sm font-medium leading-normal" href="toko.html">Toko</a>
+              <a class="text-[#181411] text-sm font-medium leading-normal" href="kursus.html">Kelas</a>
+              <a class="text-[#181411] text-sm font-medium leading-normal" href="tentang-kami.html">Tentang Kami</a>
+            </div>
+        
+            <div class="flex gap-2">
+              <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                <div class="text-[#181411]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                  </svg>
+                </div>
+              </button>
+              
+              <a href="keranjang.html" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                <div class="text-[#181411]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBObuYeumA7R4RwRqg0RuhuW9rkJ7xTq9DhCQhxnCu-6hCwSbjFH_cQbDYG72hIAqVy75yx4PHtLlo1o3SDrnTSZR7CiWZkEuvzhEF6vdcEKwf7xfeU19QppJEXhxHHv8azmy1UOHRwnqNONMQN5-YRpu0JOnrw6cJGW_a2tuOqY9frS0a2bn9NOM_vj0vf5aEjxEYj_J4fRkdWW3ntikqGzA-5F63JsW5Vy2JTFuaGj-mnrJqNcfNjtew1CmQwcolVkWbmrD_iWCk");'></div>
+          </div>
+        </header>
+
+        <main class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            
+            <div class="flex flex-wrap gap-2 p-4">
+              <a class="text-[#897461] text-base font-medium leading-normal" href="kursus.html">Kelas</a>
+              <span class="text-[#897461] text-base font-medium leading-normal">/</span>
+              <span class="text-[#181411] text-base font-medium leading-normal">Coffee Roasting Basics</span>
+            </div>
+
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#181411] tracking-light text-[32px] font-bold leading-tight">Coffee Roasting Basics</p>
+                <p class="text-[#897461] text-sm font-normal leading-normal">Learn the fundamentals of roasting coffee at home. This course covers various roasting methods, bean origins, and flavor profiles.</p>
+              </div>
+            </div>
+
+            <div class="flex w-full grow bg-white @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-lg flex">
+                <div class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHbwXMwH14SGWRQ04bFrxBte56GngVW7yzW4kaKJGhra2k5w5D7KabXNd32R8TBGErcJcqlmbrPTAD7aWgdqtpG3yZaY_e9G2rJVQISvVvMpz_rbLFSp6Meu1YGz6EHxcaD1dEgiU2xW8IrDcPFkHQQsdhWUBSlnBNCxnobGvwvaUW34d_08GaT2wNHh12eedBu_rKIwvSYp3dS2cnO4_sD943i71ksg43jbEdHrTTcY73JpSDkFipoYnZly30c2C9YfItiL57ZzY");'></div>
+              </div>
+            </div>
+
+            <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Course Details</h2>
+            <p class="text-[#181411] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              This course is designed for beginners who want to learn the basics of roasting coffee at home. We'll cover different roasting methods like air roasting, drum roasting, and stovetop roasting, as well as the importance of bean origins and flavor profiles. You'll get hands-on experience with each method and learn how to troubleshoot common roasting issues.
+            </p>
+
+            <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Schedule</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-lg border border-[#e6e0db] bg-white">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-white">
+                      <th class="table-column-120 px-4 py-3 text-left text-[#181411] w-[400px] text-sm font-medium leading-normal">Date</th>
+                      <th class="table-column-240 px-4 py-3 text-left text-[#181411] w-[400px] text-sm font-medium leading-normal">Time</th>
+                      <th class="table-column-360 px-4 py-3 text-left text-[#181411] w-[400px] text-sm font-medium leading-normal">Location</th>
+                      <th class="table-column-480 px-4 py-3 text-left text-[#181411] w-[400px] text-sm font-medium leading-normal">Spots Left</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#e6e0db]">
+                      <td class="table-column-120 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">July 20, 2024</td>
+                      <td class="table-column-240 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">10:00 AM - 12:00 PM</td>
+                      <td class="table-column-360 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">Main Street Cafe</td>
+                      <td class="table-column-480 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">5</td>
+                    </tr>
+                    <tr class="border-t border-t-[#e6e0db]">
+                      <td class="table-column-120 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">August 10, 2024</td>
+                      <td class="table-column-240 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">2:00 PM - 4:00 PM</td>
+                      <td class="table-column-360 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">Downtown Roastery</td>
+                      <td class="table-column-480 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">8</td>
+                    </tr>
+                    <tr class="border-t border-t-[#e6e0db]">
+                      <td class="table-column-120 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">September 25, 2024</td>
+                      <td class="table-column-240 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">6:00 PM - 8:00 PM</td>
+                      <td class="table-column-360 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">Westside Workshop</td>
+                      <td class="table-column-480 h-[72px] px-4 py-2 w-[400px] text-[#897461] text-sm font-normal leading-normal">12</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                @container(max-width:120px){.table-column-120{display: none;}}
+                @container(max-width:240px){.table-column-240{display: none;}}
+                @container(max-width:360px){.table-column-360{display: none;}}
+                @container(max-width:480px){.table-column-480{display: none;}}
+              </style>
+            </div>
+
+            <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Pricing</h2>
+            <p class="text-[#181411] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              The course fee is $95 per person. This includes all materials, coffee beans, and a take-home roasting guide. Payment is required at the time of registration.
+            </p>
+            
+            <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Registration</h2>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Full Name</p>
+                <input
+                  placeholder="Enter your full name"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Email Address</p>
+                <input
+                  placeholder="Enter your email address"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Select Date</p>
+                <select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 bg-[image:--select-button-svg] placeholder:text-[#897461] p-4 text-base font-normal leading-normal">
+                  <option value="one">Choose a date</option>
+                  <option value="two">two</option>
+                  <option value="three">three</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex px-4 py-3 justify-start">
+              <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#d46c11] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                <span class="truncate">Register Now</span>
+              </button>
+            </div>
+          </div>
+        </main>
+        
+      </div>
+    </div>
+  </body>
+</html>
