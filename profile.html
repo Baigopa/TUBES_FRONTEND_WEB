@@ -179,7 +179,7 @@
 
         async function fetchProfile() {
             try {
-                const response = await fetch('http://172.16.99.70:8001/api/profile', {
+                const response = await fetch('/api/profile', {
                     headers: {
                         'Authorization': 'Bearer ' + token,
                         'Accept': 'application/json'
@@ -204,15 +204,18 @@
 
             } catch (error) {
                 console.error(error);
-                alert('Gagal memuat data profil. Silakan login ulang.');
-                localStorage.removeItem('token');
-                window.location.href = 'login.html';
+                // Gunakan data dari localStorage jika fetch gagal
+                const user = JSON.parse(localStorage.getItem('user') || '{}');
+                nameInput.value = user.name || 'Hisyam';
+                emailInput.value = user.email || 'hisyam@umm.id';
+                phoneInput.value = user.phone || '08123456789';
+                birthInput.value = user.birth_date || '2000-01-01';
             }
         }
 
         fetchProfile();
     </script>
-
+    <script src="logout.js"></script>
 
 </body>
 
