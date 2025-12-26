@@ -36,25 +36,60 @@
               <a class="text-[#181411] text-sm font-medium leading-normal" href="kursus.html">Kelas</a>
               <a class="text-[#181411] text-sm font-medium leading-normal" href="tentang-kami.html">Tentang Kami</a>
             </div>
-        
             <div class="flex gap-2">
-              <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
                 <div class="text-[#181411]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                    </path>
                   </svg>
                 </div>
               </button>
-              
-              <a href="keranjang.html" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+            
+              <a href="keranjang.html"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
                 <div class="text-[#181411]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z">
+                    </path>
                   </svg>
                 </div>
               </a>
             </div>
-            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBObuYeumA7R4RwRqg0RuhuW9rkJ7xTq9DhCQhxnCu-6hCwSbjFH_cQbDYG72hIAqVy75yx4PHtLlo1o3SDrnTSZR7CiWZkEuvzhEF6vdcEKwf7xfeU19QppJEXhxHHv8azmy1UOHRwnqNONMQN5-YRpu0JOnrw6cJGW_a2tuOqY9frS0a2bn9NOM_vj0vf5aEjxEYj_J4fRkdWW3ntikqGzA-5F63JsW5Vy2JTFuaGj-mnrJqNcfNjtew1CmQwcolVkWbmrD_iWCk");'></div>
+            <div class="relative group">
+            
+              <!-- FOTO PROFIL (BOLEH DIKLIK) -->
+              <a href="profile.html">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBObuYeumA7R4RwRqg0RuhuW9rkJ7xTq9DhCQhxnCu-6hCwSbjFH_cQbDYG72hIAqVy75yx4PHtLlo1o3SDrnTSZR7CiWZkEuvzhEF6vdcEKwf7xfeU19QppJEXhxHHv8azmy1UOHRwnqNONMQN5-YRpu0JOnrw6cJGW_a2tuOqY9frS0a2bn9NOM_vj0vf5aEjxEYj_J4fRkdWW3ntikqGzA-5F63JsW5Vy2JTFuaGj-mnrJqNcfNjtew1CmQwcolVkWbmrD_iWCk"
+                  class="w-10 h-10 rounded-full cursor-pointer transition duration-200
+                         hover:ring-2 hover:ring-[#a47148] hover:ring-offset-2" />
+              </a>
+            
+              <!-- DROPDOWN (MUNCUL SAAT HOVER AREA INI) -->
+              <div class="absolute right-0 top-12 w-48 bg-white rounded-xl shadow-lg
+                          border border-[#eee6df] p-3 hidden group-hover:block z-50">
+            
+                <p class="text-sm font-semibold text-gray-700">Akun Saya</p>
+            
+                <div class="mt-3 space-y-2 text-sm">
+                  <a href="profile.html" class="block py-1 hover:text-[#a47148]">Profil</a>
+                  <a href="keranjang.html" class="block py-1 hover:text-[#a47148]">Pesanan Saya</a>
+                </div>
+            
+                <hr class="my-3 border-[#f0e8df]" />
+            
+                <button class="w-full text-left text-sm text-red-600 hover:text-red-700">
+                  Keluar
+                </button>
+            
+              </div>
+            
+            </div>
+
           </div>
         </header>
 
@@ -110,7 +145,8 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+            <div id="productGrid"
+              class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-col gap-3 pb-3">
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxhYjWioQIFgpISl751vjHT78adpHmiUp7JVAJYFjAKNGAZFpSda7zF8u_o447m9dyGIToG3AtOOtE9eqNs2IFgH9z7rZBtpQEUoHOTO7AmMGtpBQmlHLiVPbsGQFA9Yy5hdexy5d4EJ8_CT5zQ3UNojrTaJdDeyarnEXc1quPpiSKuMploG4sl-6ehqhn3RYQI5pNcGcZyupF_ZvK5uFD1sz8Uu5QpiQQwzEfy76jaP2webtpkmchn3Yb-4Za6viLPPWtVanwP4k");'></div>
                 <div>
@@ -189,5 +225,64 @@
         
       </div>
     </div>
+    <script>
+      const productGrid = document.getElementById('productGrid');
+
+      async function fetchProducts() {
+        try {
+          const response = await fetch('http://172.16.99.70:8001/api/products', {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error('Gagal mengambil data produk');
+          }
+
+          const result = await response.json();
+          const products = result.data; // Laravel pagination
+
+          productGrid.innerHTML = '';
+
+          products.forEach(product => {
+            productGrid.innerHTML += `
+              <div class="flex flex-col gap-3 pb-3 cursor-pointer hover:scale-[1.02] transition">
+                
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style="background-image: url('${product.image_url ?? 'https://via.placeholder.com/300'}')">
+                </div>
+    
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">
+                    ${product.name}
+                  </p>
+                  <p class="text-[#897461] text-sm font-normal leading-normal">
+                    ${product.description ?? ''}
+                  </p>
+                  <p class="text-[#a47148] text-sm font-semibold mt-1">
+                    Rp ${Number(product.price).toLocaleString('id-ID')}
+                  </p>
+                </div>
+    
+              </div>
+            `;
+          });
+
+        } catch (error) {
+          console.error(error);
+          productGrid.innerHTML = `
+            <p class="text-red-600 text-sm">
+              Gagal memuat produk. Silakan coba lagi.
+            </p>
+          `;
+        }
+      }
+
+      fetchProducts();
+    </script>
+
   </body>
 </html>

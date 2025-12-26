@@ -1,243 +1,482 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roasty - Checkout</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <style>
-      /* Style untuk checkbox dan radio button agar iconnya terlihat */
-      .form-input.checked\:bg-\[image\:--checkbox-tick-svg\] {
-        --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
-      }
-      .form-input.checked\:bg-\[image\:--radio-dot-svg\] {
-        --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(24,20,17)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
-      }
-    </style>
-  </head>
-  <body>
-    <div
-      class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden"
-      style='font-family: Epilogue, "Noto Sans", sans-serif;'
-    >
-      <div class="layout-container flex h-full grow flex-col">
-        
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f2f0] px-10 py-3">
-          <a href="index.html" class="flex items-center gap-4 text-[#181411]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
-              </svg>
-            </div>
-            <h2 class="text-[#181411] text-lg font-bold leading-tight tracking-[-0.015em]">Roasty</h2>
-          </a>
-        
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#181411] text-sm font-medium leading-normal" href="index.html">Beranda</a>
-              <a class="text-[#181411] text-sm font-medium leading-normal" href="toko.html">Toko</a>
-              <a class="text-[#181411] text-sm font-medium leading-normal" href="kursus.html">Kelas</a>
-              <a class="text-[#181411] text-sm font-medium leading-normal" href="tentang-kami.html">Tentang Kami</a>
-            </div>
-        
-            <div class="flex gap-2">
-              <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-                <div class="text-[#181411]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-                  </svg>
-                </div>
-              </button>
-              
-              <a href="keranjang.html" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-                <div class="text-[#181411]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBObuYeumA7R4RwRqg0RuhuW9rkJ7xTq9DhCQhxnCu-6hCwSbjFH_cQbDYG72hIAqVy75yx4PHtLlo1o3SDrnTSZR7CiWZkEuvzhEF6vdcEKwf7xfeU19QppJEXhxHHv8azmy1UOHRwnqNONMQN5-YRpu0JOnrw6cJGW_a2tuOqY9frS0a2bn9NOM_vj0vf5aEjxEYj_J4fRkdWW3ntikqGzA-5F63JsW5Vy2JTFuaGj-mnrJqNcfNjtew1CmQwcolVkWbmrD_iWCk");'></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roasty - Checkout</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <style>
+    /* Style untuk checkbox dan radio button agar iconnya terlihat */
+    .form-input.checked\:bg-\[image\:--checkbox-tick-svg\] {
+      --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
+    }
+
+    .form-input.checked\:bg-\[image\:--radio-dot-svg\] {
+      --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(24,20,17)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+    }
+
+    /* Custom badge & progress visuals that match theme */
+    .roasty-badge {
+      background: #f3e7df;
+      /* soft cream */
+      color: #5e3a1c;
+      /* coffee brown */
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .roasty-progress-track {
+      background: #efe7df;
+      height: 6px;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .roasty-progress-fill {
+      background: #8b5a2b;
+      height: 100%;
+      width: 66%;
+      /* step 2 of 3 */
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+
+    /* Keep container from being too wide on very large screens */
+    .content-max {
+      max-width: 1200px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-white" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+  <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+      <!-- HEADER -->
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f2f0] px-10 py-3">
+        <a href="index.html" class="flex items-center gap-4 text-[#181411]">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                fill="currentColor"></path>
+            </svg>
           </div>
-        </header>
+          <h2 class="text-[#181411] text-lg font-bold leading-tight tracking-[-0.015em]">Roasty</h2>
+        </a>
 
-        <main class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-[#181411] text-sm font-medium leading-normal" href="index.html">Beranda</a>
+            <a class="text-[#181411] text-sm font-medium leading-normal" href="toko.html">Toko</a>
+            <a class="text-[#181411] text-sm font-medium leading-normal" href="kursus.html">Kelas</a>
+            <a class="text-[#181411] text-sm font-medium leading-normal" href="tentang-kami.html">Tentang Kami</a>
+          </div>
+
+          <div class="flex gap-2">
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#181411]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                  </path>
+                </svg>
+              </div>
+            </button>
+
+            <a href="keranjang.html"
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#181411]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z">
+                  </path>
+                </svg>
+              </div>
+            </a>
+          </div>
+         
+          <div class="relative group">
+          
+            <!-- FOTO PROFIL (BOLEH DIKLIK) -->
+            <a href="profile.html">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBObuYeumA7R4RwRqg0RuhuW9rkJ7xTq9DhCQhxnCu-6hCwSbjFH_cQbDYG72hIAqVy75yx4PHtLlo1o3SDrnTSZR7CiWZkEuvzhEF6vdcEKwf7xfeU19QppJEXhxHHv8azmy1UOHRwnqNONMQN5-YRpu0JOnrw6cJGW_a2tuOqY9frS0a2bn9NOM_vj0vf5aEjxEYj_J4fRkdWW3ntikqGzA-5F63JsW5Vy2JTFuaGj-mnrJqNcfNjtew1CmQwcolVkWbmrD_iWCk"
+                class="w-10 h-10 rounded-full cursor-pointer transition duration-200
+                       hover:ring-2 hover:ring-[#a47148] hover:ring-offset-2" />
+            </a>
+          
+            <!-- DROPDOWN (MUNCUL SAAT HOVER AREA INI) -->
+            <div class="absolute right-0 top-12 w-48 bg-white rounded-xl shadow-lg
+                        border border-[#eee6df] p-3 hidden group-hover:block z-50">
+          
+              <p class="text-sm font-semibold text-gray-700">Akun Saya</p>
+          
+              <div class="mt-3 space-y-2 text-sm">
+                <a href="profile.html" class="block py-1 hover:text-[#a47148]">Profil</a>
+                <a href="keranjang.html" class="block py-1 hover:text-[#a47148]">Pesanan Saya</a>
+              </div>
+          
+              <hr class="my-3 border-[#f0e8df]" />
+          
+              <button class="w-full text-left text-sm text-red-600 hover:text-red-700">
+                Keluar
+              </button>
+          
+            </div>
+          
+          </div>
+
+          
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main class="px-40 flex flex-1 justify-center py-8">
+        <!-- content container: two columns -->
+        <div class="layout-content-container content-max flex w-full gap-10">
+
+          <!-- KIRI: FORM PENGIRIMAN & PEMBAYARAN -->
+          <div class="flex flex-col flex-1 max-w-[720px]">
+
             <div class="flex flex-wrap gap-2 p-4">
               <a class="text-[#897461] text-base font-medium leading-normal" href="keranjang.html">Keranjang</a>
               <span class="text-[#897461] text-base font-medium leading-normal">/</span>
               <span class="text-[#181411] text-base font-medium leading-normal">Pengiriman</span>
             </div>
 
-            <h1 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Pengiriman</h1>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kontak</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Alamat</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kota</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Provinsi</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kode Pos</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Negara</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="px-4">
-              <label class="flex gap-x-3 py-3 flex-row">
-                <input type="checkbox" class="form-input h-5 w-5 rounded border-[#e6e0db] border-2 bg-transparent text-[#d46c11] checked:bg-[#d46c11] checked:border-[#d46c11] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#e6e0db] focus:outline-none" />
-                <p class="text-[#181411] text-base font-normal leading-normal">Simpan info ini untuk lain kali</p>
-              </label>
-            </div>
+            <!-- Judul + badge + progres kecil (inline) -->
+            <div class="flex items-start justify-between px-4">
+              <h1 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] text-left pb-3 pt-5">
+                Pengiriman</h1>
 
-            <h1 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Metode Pengiriman</h1>
-            <div class="flex flex-col gap-3 p-4">
-              <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
-                <input
-                  type="radio"
-                  class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
-                  name="shipping_method"
-                  checked=""
-                />
-                <div class="flex grow flex-col">
-                  <p class="text-[#181411] text-sm font-medium leading-normal">Standar</p>
-                  <p class="text-[#897461] text-sm font-normal leading-normal">4-7 hari kerja</p>
+              <!-- RIGHT SIDE (badge + progress) -->
+              <div class="hidden md:flex flex-col items-end gap-3 mt-4">
+                <!-- badge -->
+                <div class="roasty-badge">
+                  <!-- optional small icon (SVG) -->
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="inline-block">
+                    <path d="M3 7h18M3 12h12M3 17h18" stroke="#5e3a1c" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  Checkout Step: Pengiriman
                 </div>
-              </label>
-              <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
-                <input
-                  type="radio"
-                  class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
-                  name="shipping_method"
-                />
-                <div class="flex grow flex-col">
-                  <p class="text-[#181411] text-sm font-medium leading-normal">Express</p>
-                  <p class="text-[#897461] text-sm font-normal leading-normal">2-3 hari kerja</p>
+
+                <!-- progress -->
+                <div style="width:180px;">
+                  <div class="roasty-progress-track">
+                    <div class="roasty-progress-fill"></div>
+                  </div>
+                  <div class="text-[13px] text-[#5e3a1c] font-medium mt-2">Step 2 dari 3 — Pengiriman</div>
                 </div>
-              </label>
+              </div>
             </div>
 
-            <h1 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Pembayaran</h1>
-            <div class="flex flex-col gap-3 p-4">
-              <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
-                <input
-                  type="radio"
-                  class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
-                  name="payment_method"
-                  checked=""
-                />
-                <div class="flex grow flex-col"><p class="text-[#181411] text-sm font-medium leading-normal">Kartu Kredit</p></div>
-              </label>
-              <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
-                <input
-                  type="radio"
-                  class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
-                  name="payment_method"
-                />
-                <div class="flex grow flex-col"><p class="text-[#181411] text-sm font-medium leading-normal">PayPal</p></div>
-              </label>
-            </div>
-            
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Nomor kartu</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Tanggal kadaluarsa (MM/YY)</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kode keamanan</p>
-                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal" value="" />
-              </label>
-            </div>
-            <div class="px-4">
-              <label class="flex gap-x-3 py-3 flex-row">
-                <input type="checkbox" class="form-input h-5 w-5 rounded border-[#e6e0db] border-2 bg-transparent text-[#d46c11] checked:bg-[#d46c11] checked:border-[#d46c11] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#e6e0db] focus:outline-none" />
-                <p class="text-[#181411] text-base font-normal leading-normal">Alamat penagihan sama dengan alamat pengiriman</p>
-              </label>
-            </div>
+            <!-- FORM FIELDS (kiri) -->
+            <div class="px-4 pt-2">
 
-            <h3 class="text-[#181411] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Ringkasan Pesanan</h3>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
-              <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUD0Ihssl3F2ebWxcu5WeWFwb9uVfwZaOXV77aZx2l52G6m_jCsO3GvX609Q23-a6CR37bWpwXgqkQcCtuGeyvLsIq67Himdmnf7lPGM_lXKGzW1KBGfxB2qFTwT2V_I2dA8uILyPnPdZvB7DgmUX-FXjO0CCNtmYtjFwMVDz495AY6loo0krs4JZxH7MLd8K4NOXYrq-iDVDIjLzxe-svuOU0G2h7ZEBhXVhiF5DqzUMFksaYGYYeaGk54USjez-4aQKp0Yq81Hk");'></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">Sumatran Mandheling</p>
-                <p class="text-[#897461] text-sm font-normal leading-normal line-clamp-2">Medium Roast</p>
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kontak</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Alamat</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kota</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Provinsi</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kode Pos</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Negara</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="px-0 py-2">
+                <label class="flex gap-x-3 py-3 flex-row items-center">
+                  <input type="checkbox"
+                    class="form-input h-5 w-5 rounded border-[#e6e0db] border-2 bg-transparent text-[#d46c11] checked:bg-[#d46c11] checked:border-[#d46c11] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#e6e0db] focus:outline-none" />
+                  <p class="text-[#181411] text-base font-normal leading-normal">Simpan info ini untuk lain kali</p>
+                </label>
+              </div>
+
+              <!-- Metode Pengiriman -->
+              <h2 class="text-[#181411] text-[18px] font-bold leading-tight tracking-[-0.015em] text-left pb-3 pt-5">
+                Metode Pengiriman</h2>
+              <div class="flex flex-col gap-3 p-0">
+                <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
+                  <input type="radio"
+                    class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
+                    name="shipping_method" checked="" />
+                  <div class="flex grow flex-col">
+                    <p class="text-[#181411] text-sm font-medium leading-normal">Standar</p>
+                    <p class="text-[#897461] text-sm font-normal leading-normal">4-7 hari kerja</p>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
+                  <input type="radio"
+                    class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
+                    name="shipping_method" />
+                  <div class="flex grow flex-col">
+                    <p class="text-[#181411] text-sm font-medium leading-normal">Express</p>
+                    <p class="text-[#897461] text-sm font-normal leading-normal">2-3 hari kerja</p>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Pembayaran -->
+              <h2 class="text-[#181411] text-[18px] font-bold leading-tight tracking-[-0.015em] text-left pb-3 pt-5">
+                Pembayaran</h2>
+
+              <div class="flex flex-col gap-3 p-0">
+                <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
+                  <input type="radio"
+                    class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
+                    name="payment_method" checked="" />
+                  <div class="flex grow flex-col">
+                    <p class="text-[#181411] text-sm font-medium leading-normal">Kartu Kredit</p>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-4 rounded-lg border border-solid border-[#e6e0db] p-[15px]">
+                  <input type="radio"
+                    class="form-input h-5 w-5 border-2 border-[#e6e0db] bg-transparent text-transparent checked:border-[#181411] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#181411]"
+                    name="payment_method" />
+                  <div class="flex grow flex-col">
+                    <p class="text-[#181411] text-sm font-medium leading-normal">PayPal</p>
+                  </div>
+                </label>
+              </div>
+
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Nomor kartu</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Tanggal kadaluarsa (MM/YY)</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-[#181411] text-base font-medium leading-normal pb-2">Kode keamanan</p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border-none bg-[#f4f2f0] focus:border-none h-14 placeholder:text-[#897461] p-4 text-base font-normal leading-normal"
+                    value="" />
+                </label>
+              </div>
+
+              <div class="px-0">
+                <label class="flex gap-x-3 py-3 flex-row items-center">
+                  <input type="checkbox"
+                    class="form-input h-5 w-5 rounded border-[#e6e0db] border-2 bg-transparent text-[#d46c11] checked:bg-[#d46c11] checked:border-[#d46c11] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#e6e0db] focus:outline-none" />
+                  <p class="text-[#181411] text-base font-normal leading-normal">Alamat penagihan sama dengan alamat
+                    pengiriman</p>
+                </label>
+              </div>
+
+            </div> <!-- end px-4 -->
+          </div> <!-- end kiri -->
+
+          <!-- KANAN: RINGKASAN PESANAN (sticky) -->
+          <aside class="w-full lg:w-[380px] right-10 top-30">
+            <div id="kolom-ringkasan"
+              class="rounded-xl border border-[#e6e0db] p-4 sticky top-24 bg-white shadow-sm max-h-[calc(100vh-8rem)] overflow-y-auto">
+              <h3 class="text-[#181411] text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-1">Ringkasan Pesanan
+              </h3>
+          
+              <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-14 h-14"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUD0Ihssl3F2ebWxcu5WeWFwb9uVfwZaOXV77aZx2l52G6m_jCsO3GvX609Q23-a6CR37bWpwXgqkQcCtuGeyvLsIq67Himdmnf7lPGM_lXKGzW1KBGfxB2qFTwT2V_I2dA8uILyPnPdZvB7DgmUX-FXjO0CCNtmYtjFwMVDz495AY6loo0krs4JZxH7MLd8K4NOXYrq-iDVDIjLzxe-svuOU0G2h7ZEBhXVhiF5DqzUMFksaYGYYeaGk54USjez-4aQKp0Yq81Hk");'>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">Sumatran Mandheling</p>
+                  <p class="text-[#897461] text-sm font-normal leading-normal line-clamp-2">Medium Roast</p>
+                </div>
+              </div>
+          
+              <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-14 h-14"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIyVbB-IVCtggdt00JZZZZKeHphBMRzRqcMTAqM3ZKA2l_qlEp3kyvoWpQVI851JfS4FpmVmpxtSurJELOUW8yXwUP1Xp-5YPOKSBA0fophLrntMjpVPp4Ha9VIiUGJEAxomgQOyoxX720Nlbvl9bhub9HxZBU6MYnRx_gxt_bxR3l1AXv7OgFywt33zgQav_aT3aZlUIyhsun73-TR04kiSXqeY54Nck5jcDCRCCC8vlt4Hzwsqf44IvdkplEENb6dqx2quD3cls");'>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">French Press</p>
+                  <p class="text-[#897461] text-sm font-normal leading-normal line-clamp-2">1 lb</p>
+                </div>
+              </div>
+          
+              <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-14 h-14"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABXjj1VYJbHpzypXNAhTcfPQRkpTSx3IanWTvd7OoJF4LzQPtSxAschjM_TFr94-C5fjYLWyPhUMNsFVYltIbpse4_Lr7mNjeXDkFfl3O5d5GC28J1yRnoYBMDiKkK26u0js3xDFUr9ZbR45NirB9zJNpSoeTajuvHKuptfV-Y7xwH5QzFvntAKgGCEcjVFZcqLL1Xap6YS6fqg0pp_kCej4SYrT_6p0JhgANV08jGbSWt23g6AFEn1YHSvNWQ95skUHVOwG-3F2I");'>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">Coffee Mug</p>
+                  <p class="text-[#897461] text-sm font-normal leading-normal line-clamp-2">1</p>
+                </div>
+              </div>
+          
+              <div class="p-4">
+                <div class="flex justify-between gap-x-6 py-2">
+                  <p class="text-[#897461] text-sm font-normal leading-normal">Subtotal</p>
+                  <p class="text-[#181411] text-sm font-normal leading-normal text-right">$45.00</p>
+                </div>
+                <div class="flex justify-between gap-x-6 py-2">
+                  <p class="text-[#897461] text-sm font-normal leading-normal">Pengiriman</p>
+                  <p class="text-[#181411] text-sm font-normal leading-normal text-right">$5.00</p>
+                </div>
+                <div class="flex justify-between gap-x-6 py-2">
+                  <p class="text-[#897461] text-sm font-normal leading-normal">Total</p>
+                  <p class="text-[#181411] text-sm font-normal leading-normal text-right">$50.00</p>
+                </div>
+              </div>
+          
+              <div class="flex px-4 py-3">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#d46c11] text-white text-base font-bold leading-normal tracking-[0.015em]">
+                  <span class="truncate">Bayar Sekarang</span>
+                </button>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
-              <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIyVbB-IVCtggdt00JZZZZKeHphBMRzRqcMTAqM3ZKA2l_qlEp3kyvoWpQVI851JfS4FpmVmpxtSurJELOUW8yXwUP1Xp-5YPOKSBA0fophLrntMjpVPp4Ha9VIiUGJEAxomgQOyoxX720Nlbvl9bhub9HxZBU6MYnRx_gxt_bxR3l1AXv7OgFywt33zgQav_aT3aZlUIyhsun73-TR04kiSXqeY54Nck5jcDCRCCC8vlt4Hzwsqf44IvdkplEENb6dqx2quD3cls");'></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">French Press</p>
-                <p class="text-[#897461] text-sm font-normal leading-normal line-clamp-2">1 lb</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
-              <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABXjj1VYJbHpzypXNAhTcfPQRkpTSx3IanWTvd7OoJF4LzQPtSxAschjM_TFr94-C5fjYLWyPhUMNsFVYltIbpse4_Lr7mNjeXDkFfl3O5d5GC28J1yRnoYBMDiKkK26u0js3xDFUr9ZbR45NirB9zJNpSoeTajuvHKuptfV-Y7xwH5QzFvntAKgGCEcjVFZcqLL1Xap6YS6fqg0pp_kCej4SYrT_6p0JhgANV08jGbSWt23g6AFEn1YHSvNWQ95skUHVOwG-3F2I");'></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">Coffee Mug</p>
-                <p class="text-[#897461] text-sm font-normal leading-normal line-clamp-2">1</p>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex justify-between gap-x-6 py-2">
-                <p class="text-[#897461] text-sm font-normal leading-normal">Subtotal</p>
-                <p class="text-[#181411] text-sm font-normal leading-normal text-right">$45.00</p>
-              </div>
-              <div class="flex justify-between gap-x-6 py-2">
-                <p class="text-[#897461] text-sm font-normal leading-normal">Pengiriman</p>
-                <p class="text-[#181411] text-sm font-normal leading-normal text-right">$5.00</p>
-              </div>
-              <div class="flex justify-between gap-x-6 py-2">
-                <p class="text-[#897461] text-sm font-normal leading-normal">Total</p>
-                <p class="text-[#181411] text-sm font-normal leading-normal text-right">$50.00</p>
-              </div>
-            </div>
-            
-            <div class="flex px-4 py-3">
-              <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#d46c11] text-white text-base font-bold leading-normal tracking-[0.015em]">
-                <span class="truncate">Bayar Sekarang</span>
-              </button>
-            </div>
-          </div>
-        </main>
-        
-      </div>
+          </aside>
+
+        </div> <!-- end layout-content-container -->
+      </main>
+
     </div>
-  </body>
+  </div>
+  <script>
+    const token = localStorage.getItem('token');
+    const cartItemsEl = document.getElementById('cartItems');
+    const subtotalEl = document.getElementById('subtotal');
+    const shippingEl = document.getElementById('shippingCost');
+    const totalEl = document.getElementById('totalPrice');
+
+    if (!token) {
+      window.location.href = 'login.html';
+    }
+
+    async function fetchCart() {
+      try {
+        const response = await fetch('http://172.16.99.70:8001/api/cart', {
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!response.ok) throw new Error('Gagal mengambil cart');
+
+        const result = await response.json();
+        const cartItems = result.data.items;
+
+        let subtotal = 0;
+        cartItemsEl.innerHTML = '';
+
+        cartItems.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          subtotal += itemTotal;
+
+          cartItemsEl.innerHTML += `
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-14 h-14"
+                style="background-image:url('${item.product.image_url ?? 'https://via.placeholder.com/100'}')">
+              </div>
+  
+              <div class="flex flex-col justify-center flex-1">
+                <p class="text-[#181411] text-base font-medium leading-normal line-clamp-1">
+                  ${item.product.name}
+                </p>
+                <p class="text-[#897461] text-sm font-normal leading-normal">
+                  ${item.quantity} x Rp ${Number(item.price).toLocaleString('id-ID')}
+                </p>
+              </div>
+  
+              <p class="text-[#181411] text-sm font-semibold">
+                Rp ${itemTotal.toLocaleString('id-ID')}
+              </p>
+            </div>
+          `;
+        });
+
+        const shippingCost = subtotal > 300000 ? 0 : 20000;
+        const total = subtotal + shippingCost;
+
+        subtotalEl.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+        shippingEl.textContent = shippingCost === 0 ? 'Gratis' : `Rp ${shippingCost.toLocaleString('id-ID')}`;
+        totalEl.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+
+      } catch (error) {
+        console.error(error);
+        cartItemsEl.innerHTML = `
+          <p class="text-red-600 text-sm px-4">
+            Gagal memuat ringkasan pesanan
+          </p>
+        `;
+      }
+    }
+
+    fetchCart();
+  </script>
+
+</body>
+
 </html>

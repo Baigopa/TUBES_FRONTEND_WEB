@@ -36,26 +36,62 @@
               <a class="text-[#181411] text-sm font-medium leading-normal" href="kursus.html">Kelas</a>
               <a class="text-[#181411] text-sm font-medium leading-normal" href="tentang-kami.html">Tentang Kami</a>
             </div>
-        
             <div class="flex gap-2">
-              <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
                 <div class="text-[#181411]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                    </path>
                   </svg>
                 </div>
               </button>
-              
-              <a href="keranjang.html" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+            
+              <a href="keranjang.html"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f2f0] text-[#181411] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
                 <div class="text-[#181411]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z">
+                    </path>
                   </svg>
                 </div>
               </a>
             </div>
-            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBObuYeumA7R4RwRqg0RuhuW9rkJ7xTq9DhCQhxnCu-6hCwSbjFH_cQbDYG72hIAqVy75yx4PHtLlo1o3SDrnTSZR7CiWZkEuvzhEF6vdcEKwf7xfeU19QppJEXhxHHv8azmy1UOHRwnqNONMQN5-YRpu0JOnrw6cJGW_a2tuOqY9frS0a2bn9NOM_vj0vf5aEjxEYj_J4fRkdWW3ntikqGzA-5F63JsW5Vy2JTFuaGj-mnrJqNcfNjtew1CmQwcolVkWbmrD_iWCk");'></div>
-          </div>
+        
+            <div class="relative group">
+            
+              <!-- FOTO PROFIL (BOLEH DIKLIK) -->
+              <a href="profile.html">
+                <img
+                  id="profileAvatar"
+                  src="https://via.placeholder.com/40"
+                  class="w-10 h-10 rounded-full cursor-pointer transition duration-200
+                  hover:ring-2 hover:ring-[#a47148] hover:ring-offset-2" />
+              </a>
+            
+              <!-- DROPDOWN (MUNCUL SAAT HOVER AREA INI) -->
+              <div class="absolute right-0 top-12 w-48 bg-white rounded-xl shadow-lg
+                          border border-[#eee6df] p-3 hidden group-hover:block z-50">
+            
+                <p id="profileName" class="text-sm font-semibold text-gray-700">Akun Saya</p>
+            
+                <div class="mt-3 space-y-2 text-sm">
+                  <a href="profile.html" class="block py-1 hover:text-[#a47148]">Profil</a>
+                  <a href="keranjang.html" class="block py-1 hover:text-[#a47148]">Pesanan Saya</a>
+                </div>
+            
+                <hr class="my-3 border-[#f0e8df]" />
+            
+                <button id="logoutButton" class="w-full text-left text-sm text-red-600 hover:text-red-700">
+                  Keluar
+                </button>
+            
+              </div>
+            
+            </div>
+            
         </header>
 
         <main class="px-40 flex flex-1 justify-center py-5">
@@ -194,5 +230,72 @@
         
       </div>
     </div>
+    <script>
+      const token = localStorage.getItem('token');
+
+      // ================================
+      // CEK AUTH
+      // ================================
+      if (!token) {
+        window.location.href = 'login.html';
+      }
+
+      async function fetchProfile() {
+        try {
+          const response = await fetch('http://172.16.99.70:8001/api/profile', {
+            method: 'GET',
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Accept': 'application/json'
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error('Unauthorized');
+          }
+
+          const result = await response.json();
+          const profile = result.data;
+
+          // ================================
+          // TAMPILKAN DATA USER
+          // ================================
+          document.getElementById('profileName').textContent = profile.name;
+
+          // Jika backend punya avatar_url
+          if (profile.avatar_url) {
+            document.getElementById('profileAvatar').src = profile.avatar_url;
+          }
+
+        } catch (error) {
+          console.error(error);
+          localStorage.removeItem('token');
+          window.location.href = 'login.html';
+        }
+      }
+
+      fetchProfile();
+
+      // ================================
+      // LOGOUT
+      // ================================
+      document.getElementById('logoutButton').addEventListener('click', async () => {
+        try {
+          await fetch('http://172.16.99.70:8001/api/logout', {
+            method: 'POST',
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Accept': 'application/json'
+            }
+          });
+        } catch (e) {
+          // ignore error
+        }
+
+        localStorage.removeItem('token');
+        window.location.href = 'login.html';
+      });
+    </script>
+
   </body>
 </html>
